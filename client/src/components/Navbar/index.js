@@ -1,19 +1,8 @@
 import React,{Fragment} from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar , Nav , NavDropdown} from 'react-bootstrap';
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { logout } from "../../actions/auth";
 
-const navbar = ({auth:{isAuthenticated,loading},logout}) => {
-  const authLink = (
-    <Nav>
-    <Nav.Link onClick={logout} href="#">Logout</Nav.Link>
-  </Nav>
-  );
-  const geustLinks =(
-    
-  );
+import { Navbar , Nav , NavDropdown} from 'react-bootstrap';
+
+const navbar = () => {
     return (
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Navbar.Brand href="#home">Apna delivery</Navbar.Brand>
@@ -27,18 +16,8 @@ const navbar = ({auth:{isAuthenticated,loading},logout}) => {
         Rgistration
       </Nav.Link>
     </Nav>
-    
-
   </Navbar.Collapse>
 </Navbar>
     )
 };
-navbar.prototype = {
-  logout: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-}
-
-const mapStateToProps = state =>({
-  auth: state.auth
-});
-export default connect(mapStateToProps,{ logout })(navbar)
+export default navbar
