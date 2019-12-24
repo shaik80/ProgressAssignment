@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 // @access      Public
 
 router.get('/AddActor', (req, res, next) => {
-    res.send("hello")
+    res.send("AddActor")
 })
 
 // @route       POST api/Actor/ViewActor
@@ -17,7 +17,7 @@ router.get('/AddActor', (req, res, next) => {
 // @access      Public
 
 router.get('/ViewActor', (req, res, next) => {
-    res.send("hello")
+    res.send("ViewActor")
 })
 
 
