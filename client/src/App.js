@@ -2,13 +2,13 @@ import React,{Fragment,useEffect} from 'react';
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 // Redux
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
 import store from "./store";
 
 
 const App = () => {
 return (
-  <Provider store={store}>
+  // <Provider store={store}>
     <Router>
       <Fragment>
         <Navbar/>
@@ -19,6 +19,6 @@ return (
           </Switch>
       </Fragment>
     </Router>
-  </Provider>
+  // </Provider>
 )};
 export default App;
