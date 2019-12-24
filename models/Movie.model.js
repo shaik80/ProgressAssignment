@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 
 const MovieSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     name:{
         type:String,
-        required:true,
-        unique:true
+        required:true
     },
     year:{
-        type:String,
+        type:Number,
         required:true
     },
     plot:{
@@ -17,16 +17,13 @@ const MovieSchema = new mongoose.Schema({
     poster:{
         type:String
     },
-    producer:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref: 'Actor',
-        required:true,
-        unique:true
-    },
-    Actor:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref: 'Actor'
-    }
+    Actor:[
+        {
+                type:mongoose.Schema.Types.ObjectId,
+                ref: 'Actor',
+                default:""   
+        }
+    ]
 });
 
 module.exports = Movie = mongoose.model('Movie',MovieSchema);

@@ -8,8 +8,27 @@ const Actor = mongoose.model('Actor');
 // @desc        ADD Actor
 // @access      Public
 
-router.get('/AddActor', (req, res, next) => {
-    res.send("AddActor")
+router.post('/AddActor', (req, res, next) => {
+    
+    const actor = new Actor({
+        name: req.body.name,
+        sex : req.body.sex,
+        dob : req.body.dob,
+        Bio : req.body.Bio,
+        Movie : req.body.Movie
+    });
+
+    actor.save()
+    .then(doc => {
+        res.status(201).json({
+            message: doc
+        });
+    })
+    .catch(er => {
+        res.status(500).json({
+            error: er
+        })
+    });
 })
 
 
@@ -19,7 +38,17 @@ router.get('/AddActor', (req, res, next) => {
 // @access      Public
 
 router.get('/ViewActor', (req, res, next) => {
-    res.send("ViewActor")
+    Actor.find({})
+    .then(doc => {
+        res.status(201).json({
+            message: doc
+        });
+    })
+    .catch(er => {
+        res.status(500).json({
+            error: er
+        })
+    });
 })
 
 
