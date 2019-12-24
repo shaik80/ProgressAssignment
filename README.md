@@ -13,7 +13,7 @@ have the following entities in the application (node js and React).
 + axios
 
 ## Work done
-+ Database Schema is normalized
++ Database Schema is normalized (like 1NF)
 + AddActor and AddMovie can be added using postman
 + React and Redux setup
 + UI for AddActor
