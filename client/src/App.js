@@ -1,24 +1,21 @@
-import React,{Fragment,useEffect} from 'react';
+import React from 'react';
 import Navbar from './components/Navbar'
+import AddActor from './components/Actor'
 import { BrowserRouter as Router,Route,Switch} from 'react-router-dom'
-// Redux
-// import { Provider } from "react-redux";
 import store from "./store";
-
+import { Provider } from "react-redux";
 
 const App = () => {
 return (
-  // <Provider store={store}>
+  <Provider store={store}>
     <Router>
-      <Fragment>
         <Navbar/>
           <Switch>
-            {/* <Route exact path="/regisration" component={registration}/>
-            <Route exact path="/login" component={login}/>
+            <Route exact path="/AddActor" component={AddActor}/>
+            {/* <Route exact path="/AddMovie" component={AddMovie}/>
             <Route exact path="/" component={Loader}/> */}
           </Switch>
-      </Fragment>
     </Router>
-  // </Provider>
+  </Provider>
 )};
 export default App;
