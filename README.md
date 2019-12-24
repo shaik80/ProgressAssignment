@@ -32,5 +32,5 @@ have the following entities in the application (node js and React).
 + from `ProgressAssignment` go to `cd ./client` and type `npm start`
 
 ## why it is not completed
-+ Having problem with react installation and axios error
++ Having problem with react installation, axios error and computer hanging
 
