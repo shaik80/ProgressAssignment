@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 const ProducerSchema = new mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
     name:{
         type:String,
         required:true
